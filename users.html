@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>کاربران</title>
+    <!--links css-->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <aside class="sidebar">
+        <ul class="sidebar__menu">
+          <li>
+            <a href="./home.html">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./users.html">
+              <i class="fa-solid fa-users"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./products.html">
+              <i class="fa-solid fa-box"></i>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <section class="main__section">
+        <nav class="main-section__header" aria-label="breadcrumb">
+          <a href="#" class="main-section__link">صفحه اصلی</a>
+          <span>/</span>
+          <a href="./users.html">کاربران</a>
+        </nav>
+        <!--Container-->
+        <div class="container">
+          <div class="container__header">
+            <div class="container__header--text">
+              <p>لیست کاربران</p>
+              <p>
+                <span class="users--data">0</span>
+                <span> کاربر ثبت‌ نام کرده‌اند.</span>
+              </p>
+            </div>
+            <button
+              type="button"
+              id="create-user"
+              class="container__header--button"
+            >
+              ایجاد کاربر
+            </button>
+          </div>
+          <!--Container Table-->
+          <div class="container__table">
+            <table class="table">
+              <caption class="caption">
+                لیست کاربران
+              </caption>
+              <thead class="table__header">
+                <tr>
+                  <th scope="col" class="table__header--text">
+                    نام و نام‌خانوادگی
+                  </th>
+                  <th scope="col" class="table__header--text">نام کاربری</th>
+                  <th scope="col" class="table__header--text">آدرس ایمیل</th>
+                  <th scope="col" class="table__header--text">شهر</th>
+                  <th scope="col" class="table__header--text">مدیریت</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <!--Loaded From JavaScript-->
+              </tbody>
+            </table>
+          </div>
+          <!--Card Mobile-->
+          <div class="container__card">
+            <!--Loaded From JS-->
+          </div>
+
+          <!--Pagination-->
+          <div class="pagination">
+            <!--Loaded From JavaScript-->
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--toast bar-->
+    <div class="toast hidden">
+      <span class="icon-card">
+        <span class="icon"></span>
+      </span>
+      <span class="toast__content"></span>
+
+      <div class="process-bar">
+        <div class="process"></div>
+      </div>
+    </div>
+    <!---modal Screen-->
+    <div class="modal__screen hidden">
+      <!--Modal Create User-->
+      <div
+        class="modal modal__user--create hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-create-title"
+      >
+        <div class="modal__header">
+          <h4 id="modal-title">ایجاد کاربر</h4>
+          <button
+            type="button"
+            aria-label="بسته شدن مودال"
+            class="button modal__button--close"
+            id="modal-create-close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form class="modal__body" id="user-create-form">
+          <label for="create-user-Firstname" class="modal__label"> نام</label>
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="نام را وارد نمائید ..."
+            id="user-Firstname"
+          />
+          <label for="create-user-Lastname" class="modal__label">
+            نام‌خانوادگی</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder=" نام خانوادگی را وارد نمائید ..."
+            id="user-Lastname"
+          />
+          <label for="create-user-userName" class="modal__label">
+            نام کاربری</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="نام کاربری را وارد نمائید ..."
+            id="user-userName"
+          />
+          <label for="create-user-email" class="modal__label"> ایمیل</label>
+          <input
+            type="email"
+            class="modal__input"
+            placeholder="ایمیل را وارد نمائید ..."
+            id="user-email"
+          />
+          <label for="create-user-city" class="modal__label"> شهر</label>
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="شهر خود را وارد نمائید ..."
+            id="user-city"
+          />
+        </form>
+        <div class="modal__footer">
+          <button
+            type="submit"
+            form="user-create-form"
+            aria-label="تائید"
+            class="button modal__button--create"
+            id="modal-create-create"
+          >
+            تائید
+          </button>
+          <button
+            type="button"
+            aria-label="انصراف"
+            class="button modal__button--cancel"
+            id="modal-create-cancel"
+          >
+            انصراف
+          </button>
+        </div>
+      </div>
+      <!--Modal Rmove User-->
+      <div
+        class="modal modal__user--remove hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-remove-title"
+      >
+        <div class="modal__header">
+          <h4 id="modal-title">حذف کاربر</h4>
+          <button
+            type="button"
+            aria-label="بسته شدن مودال"
+            class="button modal__button--close"
+            id="modal-remove-close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form class="modal__body" id="user-remove-form">
+          <p class="modal__body--text">آیا از حذف این کاربر اطمینان دارید؟</p>
+        </form>
+        <div class="modal__footer">
+          <button
+            type="submit"
+            form="user-remove-form"
+            aria-label="تائید"
+            class="button modal__button--create"
+            id="modal-remove-create"
+          >
+            تائید
+          </button>
+          <button
+            type="button"
+            aria-label="انصراف"
+            class="button modal__button--cancel"
+            id="modal-remove-cancel"
+          >
+            انصراف
+          </button>
+        </div>
+      </div>
+      <!--Modal Edit User-->
+      <div
+        class="modal modal__user--edit hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-edit-title"
+      >
+        <div class="modal__header">
+          <h4 id="modal-title">ویرایش کاربر</h4>
+          <button
+            type="button"
+            aria-label="بسته شدن مودال"
+            class="button modal__button--close"
+            id="modal-edit-close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form class="modal__body" id="user-edit-form">
+          <label for="edit-user-Firstname" class="modal__label">
+            نام جدید</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="نام جدید را وارد نمائید ..."
+            id="edit-user-Firstname"
+          />
+          <label for="edit-user-Lastname" class="modal__label">
+            نام‌خانوادگی جدید</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder=" نام خانوادگی جدید را وارد نمائید ..."
+            id="edit-user-Lastname"
+          />
+          <label for="edit-user-userName" class="modal__label">
+            نام کاربری جدید</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="نام کاربری جدید را وارد نمائید ..."
+            id="edit-user-userName"
+          />
+          <label for="edit-user-email" class="modal__label"> ایمیل جدید</label>
+          <input
+            type="email"
+            class="modal__input"
+            placeholder="ایمیل جدید را وارد نمائید ..."
+            id="edit-user-email"
+          />
+          <label for="edit-user-city" class="modal__label"> شهر جدید</label>
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="شهر جدید را وارد نمائید ..."
+            id="edit-user-city"
+          />
+        </form>
+        <div class="modal__footer">
+          <button
+            type="submit"
+            form="user-edit-form"
+            aria-label="تائید"
+            class="button modal__button--create"
+            id="modal-edit-create"
+          >
+            تائید
+          </button>
+          <button
+            type="button"
+            aria-label="انصراف"
+            class="button modal__button--cancel"
+            id="modal-edit-cancel"
+          >
+            انصراف
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/users.js"></script>
+  </body>
+</html>

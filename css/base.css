@@ -1,0 +1,62 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Vazirmatn";
+  background: var(--color-bg-body);
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+input {
+  background: none;
+  border: none;
+  outline: none;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: var(--color-bg-sidebar);
+  height: 100dvh;
+  width: 80px;
+  flex-shrink: 0;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.sidebar__menu a i {
+  color: var(--color-text);
+  font-size: 1.56rem;
+  background: #1e2a4a;
+  padding: 1rem;
+  border-radius: var(--radius-primary);
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: none;
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+ul {
+  list-style-type: none;
+}

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محصولات</title>
+    <!--links css-->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <aside class="sidebar">
+        <ul class="sidebar__menu">
+          <li>
+            <a href="./home.html">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./users.html">
+              <i class="fa-solid fa-users"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./products.html">
+              <i class="fa-solid fa-box"></i>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <section class="main__section">
+        <nav class="main-section__header" aria-label="breadcrumb">
+          <a href="#" class="main-section__link">صفحه اصلی</a>
+          <span>/</span>
+          <a href="./products.html">محصولات</a>
+        </nav>
+        <!--Container-->
+
+        <div class="container">
+          <div class="container__header">
+            <div class="container__header--text">
+              <p>لیست محصولات</p>
+              <p>
+                <span class="products--data">0</span>
+                <span> محصول در وبسایت شما وجود دارد</span>
+              </p>
+            </div>
+            <button
+              type="button"
+              id="create-product"
+              class="container__header--button"
+            >
+              ایجاد محصول
+            </button>
+          </div>
+          <!--Container Table-->
+          <div class="container__table">
+            <table class="table">
+              <caption class="caption">
+                لیست محصولات
+              </caption>
+              <thead class="table__header">
+                <tr>
+                  <th scope="col" class="table__header--text">عنوان محصول</th>
+                  <th scope="col" class="table__header--text">قیمت محصول</th>
+                  <th scope="col" class="table__header--text">عنوان کوتاه</th>
+                  <th scope="col" class="table__header--text">مدیریت</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <!--Loaded From JS-->
+              </tbody>
+            </table>
+          </div>
+          <!--Container Card-->
+          <div class="container__card">
+            <!--Loaded From JS-->
+          </div>
+          <!--Pagination-->
+          <div class="pagination">
+            <!--Loaded From JS-->
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--toast bar-->
+    <div class="toast success hidden">
+      <span class="icon-card">
+        <span class="icon"></span>
+      </span>
+      <span class="toast__content"> محصول با موفقیت ویرایش شد </span>
+
+      <div class="process-bar">
+        <div class="process"></div>
+      </div>
+    </div>
+    <!--Modal Screen-->
+    <div class="modal__screen hidden">
+      <!--Modal Create Product-->
+      <div
+        class="modal modal__products--create hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-create-title"
+      >
+        <div class="modal__header">
+          <h4 id="modal-title">ایجاد محصول</h4>
+          <button
+            type="button"
+            aria-label="بسته شدن مودال"
+            class="button modal__button--close"
+            id="modal-create-product-close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form class="modal__body" id="product-create-form">
+          <label for="create-product-title" class="modal__label">
+            عنوان محصول</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="عنوان محصول را وارد کنید..."
+            id="product-title"
+          />
+          <label for="create-product-price" class="modal__label">
+            قیمت محصول</label
+          >
+          <input
+            type="number"
+            class="modal__input"
+            placeholder="قیمت محصول را وارد کنید..."
+            id="product-price"
+          />
+          <label for="create-product-shortName" class="modal__label">
+            عنوان کوتاه محصول</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="عنوان کوتاه محصول را وارد کنید..."
+            id="product-shortName"
+          />
+        </form>
+        <div class="modal__footer">
+          <button
+            type="submit"
+            form="product-create-form"
+            aria-label="تائید"
+            class="button modal__button--create"
+            id="modal-create-create"
+          >
+            تائید
+          </button>
+          <button
+            type="button"
+            aria-label="انصراف"
+            class="button modal__button--cancel"
+            id="modal-create-cancel"
+          >
+            انصراف
+          </button>
+        </div>
+      </div>
+      <!--Modal Remove Products-->
+      <div
+        class="modal modal__products--remove hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-remove-title"
+      >
+        <div class="modal__header">
+          <h4 id="modal-title">حذف محصول</h4>
+          <button
+            type="button"
+            aria-label="بسته شدن مودال"
+            class="button modal__button--close"
+            id="modal-remove-product-close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form class="modal__body" id="product-remove-form">
+          <p class="modal__body--text">آیا از حذف این محصول اطمینان دارید؟</p>
+        </form>
+        <div class="modal__footer">
+          <button
+            type="submit"
+            form="product-remove-form"
+            aria-label="تائید"
+            class="button modal__button--create"
+            id="modal-remove-create"
+          >
+            تائید
+          </button>
+          <button
+            type="button"
+            aria-label="انصراف"
+            class="button modal__button--cancel"
+            id="modal-remove-cancel"
+          >
+            انصراف
+          </button>
+        </div>
+      </div>
+      <!--Modal Edit Products-->
+      <div
+        class="modal modal__products--edit hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-edit-title"
+      >
+        <div class="modal__header">
+          <h4 id="modal-title">ویرایش محصول</h4>
+          <button
+            type="button"
+            aria-label="بسته شدن مودال"
+            class="button modal__button--close"
+            id="modal-edit-product-close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form class="modal__body" id="product-edit-form">
+          <label for="edit-product-title" class="modal__label">
+            عنوان جدید محصول</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="عنوان محصول جدید را وارد کنید..."
+            id="edit-product-title"
+          />
+          <label for="edit-product-price" class="modal__label">
+            قیمت جدید محصول</label
+          >
+          <input
+            type="number"
+            class="modal__input"
+            placeholder="قیمت جدید محصول را وارد کنید..."
+            id="edit-product-price"
+          />
+          <label for="edit-product-shortName" class="modal__label">
+            عنوان کوتاه جدید محصول</label
+          >
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="عنوان کوتاه جدید محصول را وارد کنید..."
+            id="edit-product-shortName"
+          />
+        </form>
+        <div class="modal__footer">
+          <button
+            type="submit"
+            form="product-edit-form"
+            aria-label="تائید"
+            class="button modal__button--create"
+            id="modal-edit-create"
+          >
+            تائید
+          </button>
+          <button
+            type="button"
+            aria-label="انصراف"
+            class="button modal__button--cancel"
+            id="modal-edit-cancel"
+          >
+            انصراف
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/products.js"></script>
+  </body>
+</html>

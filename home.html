@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fa-Ir" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خانه</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+
+    <!--Other-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <aside class="sidebar">
+        <ul class="sidebar__menu">
+          <li>
+            <a href="./home.html" aria-label="خانه">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./users.html" aria-label="کاربران">
+              <i class="fa-solid fa-users"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./products.html" aria-label="محصولات">
+              <i class="fa-solid fa-box"></i>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <section class="main__section">
+        <nav class="main-section__header">
+          <a href="#" class="main-section__link"> خانه</a>
+        </nav>
+        <nav class="main__nav">
+          <div class="nav__item">
+            <div class="nav__item--icon">
+              <span class="box-icon icon-user"
+                ><i class="fa-solid fa-users"></i
+              ></span>
+            </div>
+            <div class="nav__item--data">
+              <p class="title-users">کاربران</p>
+              <p class="num-users" id="users-count">0</p>
+            </div>
+          </div>
+          <div class="nav__item">
+            <div class="nav__item--icon">
+              <span class="box-icon icon-product">
+                <i class="fa-solid fa-box product"></i
+              ></span>
+            </div>
+            <div class="nav__item--data">
+              <p class="title-products">محصولات</p>
+              <p class="num-products" id="products-count">0</p>
+            </div>
+          </div>
+        </nav>
+        <div class="container--home">
+          <!--container users-->
+          <div class="container__users">
+            <div class="container__header">
+              <p>کاربران جدید</p>
+              <a href="./users.html">کاربران</a>
+            </div>
+            <!--container table-->
+            <div class="container__table">
+              <table class="table--home">
+                <caption class="caption">
+                  کاربران جدید
+                </caption>
+                <thead class="table__header">
+                  <tr>
+                    <th scope="col" class="table__header--text">
+                      نام و نام‌خانوادگی
+                    </th>
+                    <th scope="col" class="table__header--text">آدرس ایمیل</th>
+                  </tr>
+                </thead>
+                <tbody class="table__body--users">
+                  <!--Loaded From JS-->
+                </tbody>
+              </table>
+            </div>
+            <!--container card-->
+            <div class="container__card--users">
+              <!--Loaded From JS-->
+            </div>
+          </div>
+          <!--container products-->
+          <div class="container__products">
+            <div class="container__header">
+              <p>محصولات جدید</p>
+              <a href="./products.html">محصولات</a>
+            </div>
+            <!--container table-->
+            <div class="container__table">
+              <table class="table--home">
+                <caption class="caption">
+                  محصولات جدید
+                </caption>
+                <thead class="table__header">
+                  <tr>
+                    <th scope="col" class="table__header--text">عنوان محصول</th>
+                    <th scope="col" class="table__header--text">عنوان کوتاه</th>
+                  </tr>
+                </thead>
+                <tbody class="table__body--products">
+                  <!--Loaded From JS-->
+                </tbody>
+              </table>
+            </div>
+            <!--container card-->
+            <div class="container__card--products">
+              <!--Loaded From JS-->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--Toast Bar-->
+    <div class="toast success hidden">
+      <span class="icon-card">
+        <span class="icon"></span>
+      </span>
+      <span class="toast__content">ssssssfdklslkdf;sfdf';sjsjfsd</span>
+
+      <div class="process-bar">
+        <div class="process"></div>
+      </div>
+    </div>
+    <script src="./js/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+:root {
+  /* bg color */
+  --color-bg-body: #0f172a;
+  --color-bg-card: #202b3d;
+  --color-bg-card-mobile: #263449;
+  --color-bg-sidebar: #131c2e;
+  --color-bg-header: #182235;
+  --color-bg-modalScreen: rgba(15, 23, 42, 0.72);
+  --color-bg-modal: #1c2738;
+  --color-bg-input: #162131;
+  --color-bg-success: rgb(4, 120, 87);
+  --color-bg-failed: rgb(185, 28, 28);
+  /* color button */
+  --button-success: #10b981;
+  --button-warning: #f59e0b;
+  --button-delete: #ef4444;
+  --button-info: #3b82f6;
+  --button-info-hover: #60a5fa;
+  --button-success-hover: #34d399;
+  --button-warning-hover: #fbbf24;
+  --button-delete-hover: #f87171;
+
+  /* color text */
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  /* border */
+  --color-border: #2d3a4f;
+  --color-border-input: #334155;
+
+  /* shadow */
+  --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.35);
+  --shadow-button: 0 4px 12px rgba(59, 130, 246, 0.25);
+  /* radius */
+  --radius-primary: 0.5rem;
+  --radius-button: 0.25rem;
+  /* other */
+  --transition-default: all 0.3s ease;
+}
