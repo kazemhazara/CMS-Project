@@ -329,7 +329,7 @@ const changePageHandler = (selectedPage) => {
     }
   });
   showProdcuts(allProducts);
-  shownProductsMobile(allProducts);
+  showProductsMobile(allProducts);
 };
 /* Legal */
 window.addEventListener("load", fetchProducts);
