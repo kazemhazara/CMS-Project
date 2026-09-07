@@ -330,7 +330,7 @@ const editUser = async (event) => {
   const firstname = userNewFirstName.value.trim();
   const lastname = userNewLastName.value.trim();
   const username = userNewUsername.value.trim();
-  const email = userNewEamil.value.trim();
+  const email = userNewEmail.value.trim();
   const city = userNewCity.value.trim();
 
   const userUpdated = {
